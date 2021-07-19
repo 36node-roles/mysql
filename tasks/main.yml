@@ -15,8 +15,7 @@
     chart_version: 8.5.1
     values: "{{ lookup('template', 'mysql_values.yml.j2') | from_yaml | combine(mysql_chart_values, recursive=True) }}"
     wait: yes
-    wait_timeout: 1m
-    # wait_timeout: 10m
+    wait_timeout: 600
   register: mysql_installed
 
 - name: Deploy phpmyadmin
@@ -29,6 +28,5 @@
     chart_version: 8.2.3
     values: "{{ lookup('template', 'phpmyadmin_values.yml.j2') | from_yaml | combine(phpmyadmin_chart_values, recursive=True) }}"
     wait: yes
-    wait_timeout: 1m
-    # wait_timeout: 5m
+    wait_timeout: 600
   register: phpmyadmin_installed
