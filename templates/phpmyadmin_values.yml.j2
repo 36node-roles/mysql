@@ -3,7 +3,7 @@
 ---
 ingress:
   enabled: true
-  certManager: {{ cert_issuer }}
+  certManager: "{{ cert_issuer }}"
   hostname: phpmyadmin.{{ domain }}
 db:
   host: mysql
